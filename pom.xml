@@ -5,7 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pluralsight</groupId>
+<<<<<<< HEAD
     <artifactId>NorthwindTraders</artifactId>
+=======
+    <artifactId>LoggerExercise</artifactId>
+>>>>>>> 633aeeb8d509fdca92b14c4d06c174c3b2756130
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -16,10 +20,23 @@
 
     <dependencies>
         <dependency>
+<<<<<<< HEAD
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
     </dependencies>
 
+=======
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+    </dependencies>
+>>>>>>> 633aeeb8d509fdca92b14c4d06c174c3b2756130
 </project>

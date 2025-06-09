@@ -3,46 +3,38 @@ package com.pluralsight;
 import java.sql.*;
 
 public class Main {
-
     public static void main(String[] args) {
-
-        // 1. open a connection to the database
-        // use the database URL to point to the correct database
-        Connection connection;
+        String url = "jdbc:mysql://localhost:3306/northwind";
+        String username = "root";
+        String password = "Cloud1234!";
 
         try {
-            connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/northwind",
-                    "root",
-                    "Cloud1234!");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // create statement
-            // the statement is tied to the open connection
-            Statement statement = connection.createStatement();
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                String sql = "SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM Products";
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
 
-            // define your query
-            String query = """
-                SELECT
-                    ProductName
-                FROM
-                    products
-                ORDER BY
-                    ProductName
-                """;
+                while (rs.next()) {
+                    int id = rs.getInt("ProductID");
+                    String name = rs.getString("ProductName");
+                    double price = rs.getDouble("UnitPrice");
+                    int stock = rs.getInt("UnitsInStock");
 
-            // 2. Execute your query
-            ResultSet results = statement.executeQuery(query);
+                    System.out.println("Product Id: " + id);
+                    System.out.println("Name: " + name);
+                    System.out.printf("Price: %.2f\n", price);
+                    System.out.println("Stock: " + stock);
+                    System.out.println("------------------------");
+                }
 
-            // process the results
-            while (results.next()) {
-                String productName = results.getString("ProductName");
-                System.out.println(productName);
+            } catch (SQLException e) {
+                System.out.println("Database error: " + e.getMessage());
             }
-            // 3. Close the connection
-            connection.close();
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("MySQL Driver not found: " + e.getMessage());
         }
     }
 }

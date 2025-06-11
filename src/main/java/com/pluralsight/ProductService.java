@@ -5,7 +5,6 @@ import java.sql.Connection;//Allows us to talk to the database
 import java.sql.PreparedStatement;//Safer and more efficient than raw SQL strings
 import java.sql.ResultSet;//Holds the results of our query
 import java.sql.SQLException;//Handles any database errors
-
 public class ProductService {
 
     //This method displays all product details using a connection from the data source (pool)

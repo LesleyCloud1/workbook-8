@@ -1,24 +1,35 @@
 package com.pluralsight;
 
-import java.sql.Connection;//Needed to interact with the database
-import java.sql.ResultSet; //Holds the data returned from a SQL query
-import java.sql.SQLException;//Handles database-related errors
-import java.sql.Statement;//Used to execute SQL commands
+import org.apache.commons.dbcp2.BasicDataSource; // Provides the connection pool
+import java.sql.Connection;                      // Used to interact with the database
+import java.sql.PreparedStatement;               // Used for secure, parameterized queries
+import java.sql.ResultSet;                       // Stores the results of a query
+import java.sql.SQLException;                    // Handles SQL-related errors
 
 public class CustomerService {
 
-    //This method displays customer information sorted by country
-    public static void displayCustomers(Connection conn) throws SQLException {
-        //SQL command to get customer details sorted by country
-        String sql = "SELECT ContactName, CompanyName, City, Country, Phone FROM Customers ORDER BY Country";
+    // This method displays customer details, using a pooled connection
+    public static void displayCustomers(BasicDataSource dataSource) {
+        // SQL query to fetch contact info for all customers, sorted by country
+        String sql = "SELECT ContactName, CompanyName, City, Country, Phone " +
+                "FROM Customers ORDER BY Country";
 
-        //Try-with-resources to ensure the Statement and ResultSet are closed automatically
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
+        // Try-with-resources to ensure all resources are closed properly
+        try (
+                // Get a connection from the pool
+                Connection conn = dataSource.getConnection();
 
-            //Loop through the result set and print each customer's info
+                // Prepare the SQL statement
+                PreparedStatement stmt = conn.prepareStatement(sql);
+
+                // Execute the query and get the results
+                ResultSet rs = stmt.executeQuery()
+        ) {
+            // Print header for the customer table
             System.out.printf("%-25s %-30s %-15s %-15s %-15s\n", "Contact", "Company", "City", "Country", "Phone");
             System.out.println("------------------------------------------------------------------------------------------");
 
+            // Loop through and print each row of customer data
             while (rs.next()) {
                 String contact = rs.getString("ContactName");
                 String company = rs.getString("CompanyName");
@@ -26,8 +37,13 @@ public class CustomerService {
                 String country = rs.getString("Country");
                 String phone = rs.getString("Phone");
 
+                // Print each customer in aligned columns
                 System.out.printf("%-25s %-30s %-15s %-15s %-15s\n", contact, company, city, country, phone);
             }
+
+        } catch (SQLException e) {
+            // Show any SQL-related errors
+            System.out.println("Error retrieving customer data: " + e.getMessage());
         }
     }
 }

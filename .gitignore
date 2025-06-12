@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 # Maven output
 >>>>>>> 633aeeb8d509fdca92b14c4d06c174c3b2756130
+>>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -10,11 +13,14 @@ target/
 ### IntelliJ IDEA ###
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 .idea/
 *.iml
 *.ipr
 *.iws
 >>>>>>> 633aeeb8d509fdca92b14c4d06c174c3b2756130
+>>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -24,7 +30,13 @@ target/
 *.iml
 *.ipr
 =======
+<<<<<<< HEAD
+*.iws
+*.iml
+*.ipr
+=======
 >>>>>>> 633aeeb8d509fdca92b14c4d06c174c3b2756130
+>>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72
 
 ### Eclipse ###
 .apt_generated
@@ -48,6 +60,10 @@ build/
 ### VS Code ###
 .vscode/
 
+<<<<<<< HEAD
+### Mac OS ###
+.DS_Store
+=======
 <<<<<<< HEAD
 ### Mac OS ###
 .DS_Store
@@ -80,3 +96,4 @@ replay_pid*
 ### Mobile Tools for Java (J2ME) ###
 .mtj.tmp/
 >>>>>>> 633aeeb8d509fdca92b14c4d06c174c3b2756130
+>>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72

@@ -1,18 +1,13 @@
-<<<<<<< HEAD
-=======
+
 <?xml version="1.0" encoding="UTF-8"?>
->>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pluralsight</groupId>
-<<<<<<< HEAD
     <artifactId>SakilaMovies</artifactId>
-=======
     <artifactId>NorthwindTraders</artifactId>
->>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -29,9 +24,7 @@
             <version>8.0.33</version>
         </dependency>
 
-<<<<<<< HEAD
         <!-- Apache Commons DBCP for BasicDataSource -->
-=======
         <!-- Log4j Dependencies -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -45,15 +38,9 @@
         </dependency>
 
         <!-- Apache Commons DBCP for connection pooling -->
->>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
             <version>2.9.0</version>
         </dependency>
-    </dependencies>
-<<<<<<< HEAD
-=======
-
->>>>>>> 6483d4c3125be1377ef525c1320cc1330dda7d72
 </project>

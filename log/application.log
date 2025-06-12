@@ -1,0 +1,15 @@
+2025-06-10 09:07:09 DEBUG App:15 - This is debug : ☕ 
+2025-06-10 09:07:09 INFO  App:18 - This is info : ☕ 
+2025-06-10 09:07:09 WARN  App:20 - This is warn : ☕ 
+2025-06-10 09:07:09 ERROR App:21 - This is error : ☕ 
+2025-06-10 09:07:09 FATAL App:22 - This is fatal : ☕ 
+2025-06-10 09:07:13 DEBUG App:15 - This is debug : ☕ 
+2025-06-10 09:07:13 INFO  App:18 - This is info : ☕ 
+2025-06-10 09:07:13 WARN  App:20 - This is warn : ☕ 
+2025-06-10 09:07:13 ERROR App:21 - This is error : ☕ 
+2025-06-10 09:07:13 FATAL App:22 - This is fatal : ☕ 
+2025-06-10 09:07:34 DEBUG App:15 - This is debug : ☕ 
+2025-06-10 09:07:34 INFO  App:18 - This is info : ☕ 
+2025-06-10 09:07:34 WARN  App:20 - This is warn : ☕ 
+2025-06-10 09:07:34 ERROR App:21 - This is error : ☕ 
+2025-06-10 09:07:34 FATAL App:22 - This is fatal : ☕ 

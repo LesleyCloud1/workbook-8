@@ -5,11 +5,9 @@ import java.util.Scanner;//To read user input from the console
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);//Used to get user input
+        Scanner scanner = new Scanner(System.in); // Used to get user input
 
-        // ----------------------
-        // PART 1: Search actors by last name
-        // ----------------------
+        //Search actors by last name
         try {
             System.out.print("Enter an actor's last name: ");
             String lastName = scanner.nextLine();
@@ -19,9 +17,9 @@ public class Main {
 
             try (
                     Connection conn = DatabaseManager.getConnection();//Get connection from pool
-                    PreparedStatement stmt = conn.prepareStatement(sql)//Create prepared query
+                    PreparedStatement stmt = conn.prepareStatement(sql) // Create prepared query
             ) {
-                stmt.setString(1, lastName);//Plug in user input safely
+                stmt.setString(1, lastName); // Plug in user input safely
 
                 try (ResultSet rs = stmt.executeQuery()) {
                     boolean found = false;
@@ -56,7 +54,7 @@ public class Main {
             System.out.print("Enter actor's last name: ");
             String lastName = scanner.nextLine();
 
-            //SQL to find movies for a given actor name
+            // SQL to find movies for a given actor name
             String sql = """
                 SELECT f.title
                 FROM film f
@@ -93,7 +91,7 @@ public class Main {
             System.out.println("Error retrieving movies: " + e.getMessage());
         }
 
-        //Close the scanner at the very end
+        // Close the scanner at the very end
         scanner.close();
     }
 }
